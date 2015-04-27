@@ -1,0 +1,31 @@
+public function ShowEmailWindow():void
+			{
+				try
+				{
+					var mw:Dashboard.MailWindow = new Dashboard.MailWindow();
+					
+					PopUpManager.addPopUp(mw, this, true); 
+					PopUpManager.centerPopUp(mw);
+					
+					mw.SetAspManager(aspManager);
+					//mw.SetData(SAdminData.userID, chatId, agent.text, clientName.text);
+				}
+				catch(e:Error)
+				{
+					trace(e.message);
+				}
+			}
+			protected function SendMail(event:MouseEvent):void
+			{
+				try
+				{
+					ShowEmailWindow();
+				}
+				catch(e:Error)
+				{
+					trace(e.message);
+				}
+			}
+			
+				<NuxibaFL:UISendButton  click="SendMail(event)"/>
+				click="{export(false,1)}"

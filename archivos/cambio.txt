@@ -1,0 +1,4 @@
+ if (values.Length < 3)
+     {
+        query = query.Replace("where", "");
+     }
